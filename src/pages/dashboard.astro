@@ -1,0 +1,17 @@
+---
+import Base from "../layout/Base.astro";
+import AntCard from "../components/Card";
+---
+
+<Base title="Dashboard">
+  <section  >
+    <div class="relative mx-auto px-8 max-w-7xl py-12  md:px-12">
+      <div
+        class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 ">
+
+    <h1>Catálogo de E-books</h1>
+      <AntCard client:only="react" title="Fuerza Funcional" description="Una guía para entrenar con sentido" />
+      </div>
+    </div>
+  </section>
+</Base>
