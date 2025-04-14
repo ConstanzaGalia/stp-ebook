@@ -21,17 +21,23 @@ interface Article {
 const { chapters, articles, ebook } = Astro.props;
 
 const sortedChapters = chapters.sort((a, b) => a.data.order - b.data.order);
-const articlesByChapter = sortedChapters.map(ch => ({
-  ...ch,
-  articles: articles
-    .filter(a => a.data.chapterSlug === ch.data.slug)
-    .sort((a, b) => a.data.order - b.data.order),
-}));
+
+const articlesByChapter = sortedChapters.map(ch => {
+  const relatedArticles = articles
+    .filter(a => a.data.chapterSlug === ch.slug)
+    .sort((a, b) => a.data.order - b.data.order);
+
+  return {
+    ...ch,
+    articles: relatedArticles,
+  };
+});
+
 ---
 
-<div class="flex h-screen">
-  <aside class="w-64 bg-gray-100 p-4 overflow-y-auto">
-    <h2 class="text-lg font-bold mb-4 capitalize">{ebook}</h2>
+<div class="flex min-h-screen">
+  <aside class="w-64 bg-gray-100 p-4 overflow-y-auto flex-shrink-0">
+    <h2 class="text-lg font-bold mb-4 capitalize">{ebook || 'Libro'}</h2>
     <ul>
       {articlesByChapter.map(chapter => (
         <li id={chapter.slug} class="mb-2">
@@ -39,7 +45,10 @@ const articlesByChapter = sortedChapters.map(ch => ({
           <ul class="ml-3 mt-1">
             {chapter.articles.map(article => (
               <li id={article.slug}>
-                <a href={`/books/${ebook}/${article.slug}`} class="text-blue-600 hover:underline">
+                <a
+                  href={`/books/${ebook}/${article.slug}`}
+                  class="text-blue-600 hover:underline"
+                >
                   {article.data.title}
                 </a>
               </li>

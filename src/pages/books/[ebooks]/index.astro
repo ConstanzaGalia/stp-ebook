@@ -2,13 +2,15 @@
 import { getCollection } from 'astro:content';
 import BookLayout from '../../../layout/BookLayout.astro';
 import Base from '../../../layout/Base.astro';
+import DocumentLayout from '../../../layout/DocumentLayout.astro';
 
 const { ebooks } = Astro.params;
 
 const chapters = await getCollection(`ebooks/${ebooks}/chapters`);
 const articles = await getCollection(`ebooks/${ebooks}/articles`);
 ---
-<Base title="Entrenamiento STP Academy">
+<DocumentLayout title="Entrenamiento STP Academy">
+<Base >
   <BookLayout chapters={chapters} articles={articles} ebook={ebooks}>
     <div class="prose max-w-none">
       <h1 class="text-3xl font-bold mb-6 capitalize">{ebooks?.replace(/([A-Z])/g, ' $1')}</h1>
@@ -26,7 +28,7 @@ const articles = await getCollection(`ebooks/${ebooks}/articles`);
                   <li>
                     <a
                       href={`/books/${ebooks}/${article.slug}`}
-                      class="text-blue-600 hover:underline"
+                      class="bg-orange p-3 text-blue-600 hover:underline"
                     >
                       {article.data.title}
                     </a>
@@ -38,3 +40,4 @@ const articles = await getCollection(`ebooks/${ebooks}/articles`);
     </div>
   </BookLayout>
 </Base>
+</DocumentLayout>
