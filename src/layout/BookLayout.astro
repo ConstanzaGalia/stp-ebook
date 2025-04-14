@@ -1,0 +1,56 @@
+---
+interface Chapter {
+  id: string;
+  slug: string;
+  data: {
+    title: string;
+    order: number;
+  };
+}
+
+interface Article {
+  id: string;
+  slug: string;
+  data: {
+    title: string;
+    chapterSlug: string;
+    order: number;
+  };
+}
+
+const { chapters, articles, ebook } = Astro.props;
+
+const sortedChapters = chapters.sort((a, b) => a.data.order - b.data.order);
+const articlesByChapter = sortedChapters.map(ch => ({
+  ...ch,
+  articles: articles
+    .filter(a => a.data.chapterSlug === ch.data.slug)
+    .sort((a, b) => a.data.order - b.data.order),
+}));
+---
+
+<div class="flex h-screen">
+  <aside class="w-64 bg-gray-100 p-4 overflow-y-auto">
+    <h2 class="text-lg font-bold mb-4 capitalize">{ebook}</h2>
+    <ul>
+      {articlesByChapter.map(chapter => (
+        <li id={chapter.slug} class="mb-2">
+          <div class="font-semibold">{chapter.data.title}</div>
+          <ul class="ml-3 mt-1">
+            {chapter.articles.map(article => (
+              <li id={article.slug}>
+                <a href={`/books/${ebook}/${article.slug}`} class="text-blue-600 hover:underline">
+                  {article.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </aside>
+
+  <main class="flex-1 p-6 overflow-y-auto">
+    <slot />
+  </main>
+</div>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../../layout/BookLayout.astro';
+import Base from '../../../layout/Base.astro';
+
+const { ebooks } = Astro.params;
+
+const chapters = await getCollection(`ebooks/${ebooks}/chapters`);
+const articles = await getCollection(`ebooks/${ebooks}/articles`);
+---
+<Base title="Entrenamiento STP Academy">
+  <BookLayout chapters={chapters} articles={articles} ebook={ebooks}>
+    <div class="prose max-w-none">
+      <h1 class="text-3xl font-bold mb-6 capitalize">{ebooks?.replace(/([A-Z])/g, ' $1')}</h1>
+  
+      {chapters
+        .sort((a, b) => a.data.order - b.data.order)
+        .map(chapter => (
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold text-gray-800">{chapter.data.title}</h2>
+            <ul class="list-disc ml-5 mt-2">
+              {articles
+                .filter(article => article.data.chapterSlug === chapter.data.slug)
+                .sort((a, b) => a.data.order - b.data.order)
+                .map(article => (
+                  <li>
+                    <a
+                      href={`/books/${ebooks}/${article.slug}`}
+                      class="text-blue-600 hover:underline"
+                    >
+                      {article.data.title}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+    </div>
+  </BookLayout>
+</Base>

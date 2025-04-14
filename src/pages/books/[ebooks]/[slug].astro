@@ -1,0 +1,24 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BookLayout from '../../../layout/BookLayout.astro';
+import Base from '../../../layout/Base.astro';
+
+const { ebooks, slug } = Astro.params;
+
+const chapters = await getCollection(`ebooks/${ebooks}/chapters`);
+const articles = await getCollection(`ebooks/${ebooks}/articles`);
+const entry = articles.find(a => a.slug === slug);
+const Content = await entry?.render();
+---
+<Base title={ebooks || ''}>
+  <BookLayout chapters={chapters} articles={articles} ebook={ebooks}>
+    {entry && Content ? (
+      <article class="prose lg:prose-xl max-w-none">
+        <h1>{entry.data.title}</h1>
+        <Content />
+      </article>
+    ) : (
+      <p class="text-red-600">No se encontró el contenido para este artículo.</p>
+    )}
+  </BookLayout>
+</Base>

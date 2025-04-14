@@ -1,16 +1,34 @@
 ---
 import Base from "../layout/Base.astro";
-import AntCard from "../components/Card";
+
+const ebooks = [
+  {
+    slug: "elABCdelEntrenamiento",
+    title: "El ABC del Entrenamiento",
+    description: "Una guía para entrenar con sentido",
+  },
+];
 ---
 
 <Base title="Dashboard">
-  <section  >
-    <div class="relative mx-auto px-8 max-w-7xl py-12  md:px-12">
-      <div
-        class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 ">
-
-    <h1>Catálogo de E-books</h1>
-      <AntCard client:only="react" title="Fuerza Funcional" description="Una guía para entrenar con sentido" />
+  <section>
+    <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
+      <h1 class="text-3xl font-bold mb-6">Catálogo de E-books</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ebooks.map(ebook => (
+          <div class="border rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between">
+            <div>
+              <h2 class="text-xl font-semibold mb-2">{ebook.title}</h2>
+              <p class="text-gray-600 mb-4">{ebook.description}</p>
+            </div>
+            <a
+              href={`/books/${ebook.slug}`}
+              class="mt-auto inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Leer
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   </section>
