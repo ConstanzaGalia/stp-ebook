@@ -1,4 +1,6 @@
 import React from "react";
+import OfferSection from "./OfferSection";
+import MisionVisionSection from "./MisionVisionSection";
 
 export default function LandingPage() {
   return (
@@ -9,11 +11,11 @@ export default function LandingPage() {
           <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-6 object-cover object-center rounded drop-shadow-[0_4px_8px_rgba(0,179,172,0.5)]" alt="hero" src="/originalSTP.png" />
           <div className="text-center lg:w-2/3 w-full">
             <h1 className="title-font sm:text-4xl text-3xl mb-8 font-bold text-gray-900">Formamos Entrenadores con herramientas reales</h1>
-            <p className="mb-6 leading-relaxed font-bold">Capacitación de excelencia + tecnología de entrenamiento. Conocé Entrenamiento STP Academy y convertite en el entrenador que siempre quisiste ser.</p>
+            <p className="mb-6 leading-relaxed font-bold">Una academia online especializada 100% en entrenamiento. Formación completa, actualizada y a tu ritmo.</p>
             <div className="flex justify-center mb-10">
-            <a href="#aboutUs" className="mt-8 cursor-pointer animate-bounce">
+            <a href="#offer" className="mt-8 cursor-pointer animate-bounce">
                         <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="27" cy="26" r="18" stroke="white" stroke-width="2" />
+                            <circle cx="27" cy="26" r="18" stroke="white" strokeWidth="2" />
                             <path
                                 d="M22.41 23.2875L27 27.8675L31.59 23.2875L33 24.6975L27 30.6975L21 24.6975L22.41 23.2875Z"
                                 fill="white" />
@@ -24,48 +26,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Quiénes Somos */}
-      <section id='aboutUs' className="px-6 py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Somos STP: Especialistas en Entrenamiento con Propósito</h2>
-          <p className="text-lg leading-relaxed">
-            Somos un equipo de profesores universitarios de educación física, dedicados 100% al entrenamiento. Creamos STP para ofrecer programas de calidad que respondan a necesidades reales.
-            <br /><br />
-            Nuestros programas: STP POLICE (preparación para fuerzas de seguridad) y STP HEALTH & PERFORMANCE (salud y rendimiento). Ahora, sumamos STP Academy para formar entrenadores y STP App para acompañar su trabajo diario.
-          </p>
-        </div>
-      </section>
+      <MisionVisionSection />
 
-      {/* Por qué nace STP Academy */}
-      <section className="px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Porque Ser Profesor No Es Lo Mismo Que Ser Entrenador</h2>
-          <p className="text-lg leading-relaxed">
-            Al terminar la universidad, notamos que no estábamos preparados para entrenar personas. La formación era escolar, no práctica. Por eso, creamos STP Academy: formación integral desde la teoría hasta el entrenamiento real.
-          </p>
-        </div>
-      </section>
-
-      {/* Qué hacemos */}
-      <section className="px-6 py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Formación + Tecnología = Un Nuevo Paradigma</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 bg-white shadow rounded-2xl">
-              <h3 className="text-xl font-semibold mb-2">Cursos Presenciales y On Demand</h3>
-              <p>Entrenamiento general, funcional y sistema STP, en formatos flexibles.</p>
-            </div>
-            <div className="p-6 bg-white shadow rounded-2xl">
-              <h3 className="text-xl font-semibold mb-2">Sistema de Entrenamiento STP</h3>
-              <p>Método probado, práctico y adaptado a cada entrenador.</p>
-            </div>
-            <div className="p-6 bg-white shadow rounded-2xl">
-              <h3 className="text-xl font-semibold mb-2">STP App</h3>
-              <p>Software de planificación y gestión pensado 100% para entrenadores.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OfferSection />
 
       {/* Visión y Misión */}
       <section className="px-6 py-20">
@@ -102,6 +65,27 @@ export default function LandingPage() {
         <button></button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-white py-10 px-6 md:px-20">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div>
+            <h3 className="font-bold text-lg mb-2">STP Academy</h3>
+            <ul className="space-y-1">
+              <li><a href="#" className="hover:underline">Cursos</a></li>
+              <li><a href="#" className="hover:underline">Sobre nosotros</a></li>
+              <li><a href="#" className="hover:underline">Contacto</a></li>
+            </ul>
+          </div>
+          <div className="mt-6 md:mt-0">
+            <h3 className="font-bold text-lg mb-2">Seguinos</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-blue-400">Instagram</a>
+              <a href="#" className="hover:text-blue-400">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -9,5 +9,6 @@ export default defineConfig({
   site: "https://astro-supabase-auth.vercel.app",
   output: "server",
   adapter: vercel(),
+  viewTransitions: true,
   integrations: [tailwind(), react()],
 });
