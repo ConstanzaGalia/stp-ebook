@@ -2,15 +2,18 @@
 const { user } = Astro.locals;
 ---
 
-<nav class="border-b bg-white border-zinc-200">
-  <div class="flex items-baseline justify-end sm:justify-between p-4 max-w-screen-xl mx-auto">
-    <a href="/" class="hidden sm:block font-semibold text-black">
-      Entrenamiento STP
-    </a>
+<nav class="border-b bg-white border-zinc-100">
+  <div class="flex items-center justify-end sm:justify-between p-4 max-w-screen-xl mx-auto">
+    <div class="flex items-center">
+      <img class="h-[50px]" src="/icono.png" alt="Logo Entrenamiento STP" />
+      <a href="/" class="ml-3 hidden text-lg sm:block font-semibold text-black">
+        Entrenamiento STP
+      </a>
+    </div>
     <div>
       <ul class="font-medium flex items-baseline gap-8">
         <li>
-          <a href="/dashboard" class="block text-black">Academy</a>
+          <a href="/dashboard" class="block text-secondary font-bold">Academy</a>
         </li>
         {user && (
           <li>
