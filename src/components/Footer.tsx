@@ -9,8 +9,8 @@ const Footer = () => {
         <h3 className="font-bold text-lg mb-3">STP Academy</h3>
         <ul className="space-y-3">
           <li className='flex items-center'><AcademicCapIcon height={20}/> <a href="/dashboard" className="hover:underline ml-2">Cursos</a></li>
-          <li className='flex items-center'><HomeIcon height={20}/><a href="aboutUs" className="hover:underline ml-2">Sobre nosotros</a></li>
-          <li className='flex items-center'><DevicePhoneMobileIcon height={20} /><a href="contact" className="hover:underline ml-2">Contacto</a></li>
+          <li className='flex items-center'><HomeIcon height={20}/><a href="#aboutUs" className="hover:underline ml-2">Sobre nosotros</a></li>
+          <li className='flex items-center'><DevicePhoneMobileIcon height={20} /><a href="#contact" className="hover:underline ml-2">Contacto</a></li>
         </ul>
       </div>
       <div className='flex md:flex-row justify-between'>
