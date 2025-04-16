@@ -27,7 +27,7 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
   </head>
-  <body class="flex flex-col h-full w-full text-primary">
+  <body class="flex flex-col h-full w-full text-primary scroll-smooth">
     <slot />
   </body>
 </html>
