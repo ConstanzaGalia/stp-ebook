@@ -1,6 +1,10 @@
 import React from "react";
 import OfferSection from "./OfferSection";
 import MisionVisionSection from "./MisionVisionSection";
+import ECGDivider from "./ECGDivider";
+import ContactSection from "./ContactSection";
+import CTASection from "./CTASection";
+import Footer from "./Footer";
 
 export default function LandingPage() {
   return (
@@ -28,64 +32,16 @@ export default function LandingPage() {
 
       <MisionVisionSection />
 
+      <ECGDivider />
+
       <OfferSection />
 
-      {/* Visión y Misión */}
-      <section className="px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Nuestra Visión y Misión</h2>
-          <div className="grid md:grid-cols-2 gap-10 text-left">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Visión</h3>
-              <ul className="list-disc list-inside text-lg">
-                <li>Programa de formación más completo</li>
-                <li>Software integral de gestión</li>
-                <li>Entrenadores con vocación y criterio</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Misión</h3>
-              <ul className="list-disc list-inside text-lg">
-                <li>Compartir nuestra pasión por la actividad física</li>
-                <li>Construir comunidad entre entrenadores</li>
-                <li>Ofrecer herramientas concretas para el día a día</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
-      {/* Call to Action */}
-      <section className="px-6 py-20 bg-[#00B3AC] text-white text-center">
-        <h2 className="text-3xl font-bold mb-6">Unite a STP Academy</h2>
-        <p className="text-lg mb-8 max-w-2xl mx-auto">
-          Estás a un paso de convertirte en el entrenador que siempre quisiste ser. Formación, comunidad y tecnología en un solo lugar.
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-        <button></button>
-        </div>
-      </section>
+      <ContactSection />
 
-      {/* Footer */}
-      <footer className="bg-primary text-white py-10 px-6 md:px-20">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div>
-            <h3 className="font-bold text-lg mb-2">STP Academy</h3>
-            <ul className="space-y-1">
-              <li><a href="#" className="hover:underline">Cursos</a></li>
-              <li><a href="#" className="hover:underline">Sobre nosotros</a></li>
-              <li><a href="#" className="hover:underline">Contacto</a></li>
-            </ul>
-          </div>
-          <div className="mt-6 md:mt-0">
-            <h3 className="font-bold text-lg mb-2">Seguinos</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-blue-400">Instagram</a>
-              <a href="#" className="hover:text-blue-400">Facebook</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+
     </div>
   );
 }

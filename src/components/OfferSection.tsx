@@ -44,7 +44,7 @@ export default function OfferSection() {
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-4xl text-3xl font-bold title-font text-primary mb-4">
-            ¿Qué ofrecemos en STP Academy?
+            ¿Qué ofrecemos en STP Academy? 🤝
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-primary">
             Formación especializada en entrenamiento, con herramientas reales, flexibilidad y una comunidad que te acompaña en cada paso.
