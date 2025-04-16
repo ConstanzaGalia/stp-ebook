@@ -34,7 +34,7 @@ const ContactSection = () => {
                 EMAIL
               </h2>
               <a
-                href="mailto:contacto@stpacademy.com"
+                href="mailto:entrenamientostp@gmail.com"
                 className="text-indigo-500 leading-relaxed"
               >
                 entrenamientostp@gmail.com
@@ -56,11 +56,9 @@ const ContactSection = () => {
             href="https://wa.me/543815654293"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-secondary bg-green-500 hover:bg-green-600 py-3 px-5 rounded mb-4 text-lg transition-all"
+            className="flex items-center text-primary py-3 px-5 rounded mb-4 text-lg transition-all"
           >
-            <svg className="w-6 h-6 mr-2" fill="text-primary" viewBox="0 0 24 24">
-              <path d="M20.52 3.48A11.76..." />
-            </svg>
+            <img src='wsspIcon.png' alt='whatsapp' className='h-[30px] mr-3' />
             Whatsapp
           </a>
 
@@ -68,12 +66,10 @@ const ContactSection = () => {
             href="https://www.instagram.com/entrenamientostp.tuc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-secondary bg-pink-500 hover:bg-pink-600 py-3 px-5 rounded text-lg transition-all"
+            className="flex items-center text-primary bg-pink-500 hover:bg-pink-600 py-3 px-5 rounded text-lg transition-all"
           >
-            <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.2c3.2..." />
-            </svg>
-            Entrenamiento STP
+            <img src='igIcono.png' alt='whatsapp' className='h-[40px] mr-2' />
+            Instagram
           </a>
         </div>
       </div>

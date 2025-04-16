@@ -10,7 +10,7 @@ const CTASection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <h2 className="text-3xl font-bold mb-6">Unite a STP Academy</h2>
+      <h2 className="text-3xl font-bold mb-6">🚀 Unite a STP Academy</h2>
       <p className="text-lg mb-8 max-w-2xl mx-auto">
         Estás a un paso de convertirte en el entrenador que siempre quisiste ser. Formación, comunidad y tecnología en un solo lugar.
       </p>

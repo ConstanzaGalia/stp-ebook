@@ -13,7 +13,8 @@ const canonicalURL = new URL(Astro.url).href;
   <head>
     <title>{title}</title>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/icono.png" />
+    <link rel="icon" type="image/svg+xml" href="/icono.png"media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/stpIconoBlanco.png"media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
