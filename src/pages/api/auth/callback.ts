@@ -16,6 +16,7 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
 
   const { access_token, refresh_token } = data.session;
 
+  // Guardar sesión
   cookies.set("sb-access-token", access_token, {
     path: "/",
     secure: true,
@@ -26,5 +27,30 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     secure: true,
     httpOnly: true,
   });
+
+  // ✅ Obtener usuario logueado
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError || !userData.user) {
+    return new Response("No user found after login", { status: 500 });
+  }
+
+  const userId = userData.user.id;
+
+  // ✅ Verificar si ya existe el profile
+  const { data: existingProfile } = await supabase
+    .from("profiles")
+    .select("id")
+    .eq("id", userId)
+    .maybeSingle();
+
+  if (!existingProfile) {
+    // ✅ Crear el perfil del usuario
+    await supabase.from("profiles").insert({
+      id: userId,
+      role: "student", // o lo que desees
+    });
+  }
+
   return redirect("/dashboard");
 };

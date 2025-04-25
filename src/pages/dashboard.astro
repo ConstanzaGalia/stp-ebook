@@ -1,14 +1,35 @@
 ---
 import Base from "../layout/Base.astro";
 import DocumentLayout from "../layout/DocumentLayout.astro";
+import { supabase } from "../lib/supabase";
+
+const { user } = Astro.locals;
+
+const { data, error } = await supabase
+  .from("content_access")
+  .select("content:content_id(*)")
+  .eq("user_id", user.id);
+
+if (error) {
+  console.error("Error al obtener contenido:", error.message);
+}
 
 const ebooks = [
   {
     slug: "elABCdelEntrenamiento",
-    title: "El ABC del Entrenamiento",
+    title: "Ebook-EntrenamientoSTP",
     description: "Una guía para entrenar con sentido",
+    type: 'EBOOK_FUNCTIONALTRAINER'
   },
 ];
+
+const userContentTypes = (data ?? [])
+  .map(entry => entry.content?.type)
+  .filter(Boolean);
+
+const filteredEbooks = ebooks.filter(ebook =>
+  userContentTypes.includes(ebook.type)
+);
 ---
 <DocumentLayout title="Entrenamiento STP | Dashboard">
   <Base >
@@ -16,7 +37,7 @@ const ebooks = [
       <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
         <h1 class="text-3xl font-bold mb-6">Catálogo de E-books</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ebooks.map(ebook => (
+          {filteredEbooks.map(ebook => (
             <div class="border rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between">
               <div>
                 <h2 class="text-xl font-semibold mb-2">{ebook.title}</h2>
