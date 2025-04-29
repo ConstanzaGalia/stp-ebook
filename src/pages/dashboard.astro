@@ -1,4 +1,5 @@
 ---
+import { ArrowDownRightIcon, ArrowRightIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import Base from "../layout/Base.astro";
 import DocumentLayout from "../layout/DocumentLayout.astro";
 import { supabase } from "../lib/supabase";
@@ -18,6 +19,7 @@ const ebooks = [
   {
     slug: "elABCdelEntrenamiento",
     title: "Ebook-EntrenamientoSTP",
+    image: "/ebookImage.png",
     description: "Una guía para entrenar con sentido",
     type: 'EBOOK_FUNCTIONALTRAINER'
   },
@@ -33,25 +35,48 @@ const filteredEbooks = ebooks.filter(ebook =>
 ---
 <DocumentLayout title="Entrenamiento STP | Dashboard">
   <Base >
-    <section>
+    <section class="h-full" style="background-image: url('/signinImg.png');">
       <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
-        <h1 class="text-3xl font-bold mb-6">Catálogo de E-books</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredEbooks.map(ebook => (
-            <div class="border rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between">
-              <div>
-                <h2 class="text-xl font-semibold mb-2">{ebook.title}</h2>
-                <p class="text-gray-600 mb-4">{ebook.description}</p>
-              </div>
+        <h1 class="text-3xl font-bold mb-6">Biblioteca STP</h1>
+        {
+          filteredEbooks.length === 0 ? (
+            <div class="border-1 rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between items-center space-y-2">
+              <ExclamationTriangleIcon height={50} />
+              <p>Lo sentimos no tenes contenido disponible por el momento</p>
+              <p>Contactá con ventas para conseguir tu acceso</p>
               <a
-                href={`/books/${ebook.slug}`}
-                class="mt-auto inline-block bg-primary text-white px-4 py-2 rounded hover:bg-blue-700"
-              >
-                Leer
-              </a>
+            href="https://wa.me/543815654293"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center text-primary py-3 px-5 rounded mb-4 text-lg transition-all"
+          >
+            <img src='wsspIcon.png' alt='whatsapp' class='h-[30px] mr-3' />
+            Whatsapp
+          </a>
             </div>
-          ))}
-        </div>
+          ) : (
+            <>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredEbooks.map(ebook => (
+                  <div class="border rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between max-w-[350px]">
+                    <div>
+                      <img class="h-64 -rotate-[0.5rad]" src={ebook.image} alt="Portada del Ebook" />
+                      <h2 class="text-xl font-semibold mb-2">{ebook.title}</h2>
+                      <p class="text-gray-600 mb-4">{ebook.description}</p>
+                    </div>
+                    <a
+                      href={`/books/${ebook.slug}`}
+                      class="mt-auto inline-block bg-primary text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center justify-between"
+                    >
+                      Leer
+                      <ArrowRightIcon height={20} />
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </>
+          )
+        }
       </div>
     </section>
   </Base>
