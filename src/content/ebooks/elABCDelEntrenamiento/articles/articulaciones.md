@@ -1,5 +1,5 @@
 ---
-title: "Articulaciones – Movilidad y Estabilidad en Movimiento"
+title: "🦿 Articulaciones – Movilidad y Estabilidad en Movimiento"
 chapterSlug: "capitulo-uno"
 ebook: "elABCdelEntrenamiento"
 order: 2
@@ -19,7 +19,7 @@ Comprender la anatomía, clasificación y biomecánica de las articulaciones, su
 
 Una **articulación** es el punto de unión entre dos o más huesos. Permiten el movimiento del esqueleto y a la vez otorgan estabilidad. Su diseño anatómico determina cuánta movilidad ofrece y cuánta estabilidad requiere.
 
-> “La articulación perfecta es aquella que permite el movimiento necesario, sin comprometer la estabilidad estructural.”
+> La articulación perfecta es aquella que permite el movimiento necesario, sin comprometer la estabilidad estructural.
 > 
 > 
 > — *Neumann, 2010*

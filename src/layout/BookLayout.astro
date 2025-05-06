@@ -35,13 +35,18 @@ const articlesByChapter = sortedChapters.map(ch => {
 
 ---
 
-<div class="flex min-h-screen">
-  <aside class="w-64 bg-primary p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white">
+<div class="flex h-screen">
+  <aside class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white">
     <h2 class="text-lg font-bold mb-4 capitalize text-white">{ebook || 'Libro'}</h2>
     <ul class="space-y-2 text-white">
       {articlesByChapter.map(chapter => (
         <li id={chapter.slug} class="mb-2 text-white">
-          <div class="font-semibold text-white">{chapter.data.title}</div>
+          <div class="font-semibold text-white"><a
+                  href={`/books/${ebook}`}
+                  class="text-white hover:underline"
+                >
+                  {chapter.data.title}
+                </a></div>
           <ul class="ml-3 mt-1 space-y-2 text-white">
             {chapter.articles.map(article => (
               <li id={article.slug}>
@@ -59,7 +64,7 @@ const articlesByChapter = sortedChapters.map(ch => {
     </ul>
   </aside>
 
-  <main class="flex-1 p-6 overflow-y-auto">
+  <main class="flex-1 p-6 overflow-y-auto h-screen">
     <slot />
   </main>
 </div>
