@@ -5,7 +5,7 @@ ebook: "el-abc-del-entrenamiento"
 order: 3
 ---
 
-# 🎯 Objetivo del capítulo
+## 🎯 Objetivo del capítulo
 
 Analizar en profundidad el sistema muscular esquelético: su estructura, tipos de tejido, propiedades contráctiles, organización funcional y adaptaciones al entrenamiento. Aplicar estos conocimientos para interpretar el movimiento, programar con precisión y prevenir lesiones.
 

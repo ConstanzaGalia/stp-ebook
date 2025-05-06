@@ -5,7 +5,7 @@ ebook: "el-abc-del-entrenamiento"
 order: 2
 ---
 
-# La base fisiológica del rendimiento
+## La base fisiológica del rendimiento
 
 ## Introducción
 

@@ -5,7 +5,7 @@ ebook: "el-abc-del-entrenamiento"
 order: 4
 ---
 
-# ### Soporte y Palanca del Movimiento
+## Soporte y Palanca del Movimiento
 
 ---
 

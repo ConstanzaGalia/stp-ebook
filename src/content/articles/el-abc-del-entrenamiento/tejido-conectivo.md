@@ -5,7 +5,7 @@ ebook: "el-abc-del-entrenamiento"
 order: 5
 ---
 
-# Sostén, Coordinación y Transmisión de Fuerzas
+## Sostén, Coordinación y Transmisión de Fuerzas
 
 ---
 

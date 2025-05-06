@@ -5,7 +5,7 @@ ebook: "el-abc-del-entrenamiento"
 order: 5
 ---
 
-# El indicador supremo de la capacidad aeróbica
+## El indicador supremo de la capacidad aeróbica
 
 ## 🧠 ¿Qué es el VO₂ máx?
 
