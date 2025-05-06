@@ -8,12 +8,12 @@ const chapterSchema = z.object({
 
 const articleSchema = z.object({
   title: z.string(),
-  chapterSlug: z.string(),
   ebook: z.string(),
+  chapterSlug: z.string(),
   order: z.number(),
 });
 
 export const collections = {
-  'ebooks/elABCdelEntrenamiento/chapters': defineCollection({ schema: chapterSchema }),
-  'ebooks/elABCdelEntrenamiento/articles': defineCollection({ schema: articleSchema }),
+  chapters: defineCollection({ schema: chapterSchema }),
+  articles: defineCollection({ schema: articleSchema }),
 };

@@ -1,7 +1,7 @@
 ---
 title: "Sistema Muscular 💪🏽"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 3
 ---
 

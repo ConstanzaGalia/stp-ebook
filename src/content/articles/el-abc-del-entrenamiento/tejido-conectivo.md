@@ -1,7 +1,7 @@
 ---
 title: "Tejido Conectivo 🧵"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 5
 ---
 

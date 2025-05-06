@@ -1,7 +1,7 @@
 ---
 title: "🔋 Sistemas Energéticos"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 2
 ---
 

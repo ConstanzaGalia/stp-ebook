@@ -1,7 +1,7 @@
 ---
 title: "🧶 Las líneas miofasciales"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 7
 ---
 # Una visión integral del cuerpo en movimiento

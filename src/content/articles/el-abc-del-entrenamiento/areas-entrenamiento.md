@@ -1,7 +1,7 @@
 ---
 title: "🧠 Áreas de Entrenamiento y Fundamento Fisiológico"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 7
 ---
 

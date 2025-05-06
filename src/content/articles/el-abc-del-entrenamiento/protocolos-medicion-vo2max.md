@@ -1,7 +1,7 @@
 ---
 title: "🧪 Protocolos para mejorar el VO₂ máx"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 6
 ---
 

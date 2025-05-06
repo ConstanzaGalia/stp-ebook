@@ -51,7 +51,7 @@ const articlesByChapter = sortedChapters.map(ch => {
             {chapter.articles.map(article => (
               <li id={article.slug}>
                 <a
-                  href={`/books/${ebook}/${article.slug}`}
+                  href={`/books/${article.slug}`}
                   class="text-secondary hover:underline"
                 >
                   {article.data.title}

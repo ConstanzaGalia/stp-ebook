@@ -1,7 +1,7 @@
 ---
 title: "Acciones del Movimiento y Planos Anatómicos 🙌🏽"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 6
 ---
 

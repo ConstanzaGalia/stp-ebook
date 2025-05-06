@@ -1,7 +1,7 @@
 ---
 title: "❤️‍🔥 Frecuencia Cardíaca"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 4
 ---
 

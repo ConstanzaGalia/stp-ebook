@@ -1,11 +1,11 @@
 ---
-title: "🦿 Articulaciones – Movilidad y Estabilidad en Movimiento"
+title: "🦿 Articulaciones"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 2
 ---
 
-### Articulaciones – Movilidad y Estabilidad en Movimiento
+### Movilidad y Estabilidad en Movimiento
 
 ---
 

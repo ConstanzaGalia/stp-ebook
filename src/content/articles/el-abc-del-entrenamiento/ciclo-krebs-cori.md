@@ -1,7 +1,7 @@
 ---
 title: "🔁 Ciclo de Krebs - Ciclo de Cori "
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 3
 ---
 

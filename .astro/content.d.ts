@@ -147,31 +147,23 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"ebooks": Record<string, {
-  id: string;
-  body?: string;
-  collection: "ebooks";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"ebooks/elABCdelEntrenamiento/articles": Record<string, {
+		"articles": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
   body: string;
-  collection: "ebooks/elABCdelEntrenamiento/articles";
-  data: InferEntrySchema<"ebooks/elABCdelEntrenamiento/articles">;
+  collection: "articles";
+  data: InferEntrySchema<"articles">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"ebooks/elABCdelEntrenamiento/chapters": Record<string, {
+"chapters": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
   body: string;
-  collection: "ebooks/elABCdelEntrenamiento/chapters";
-  data: InferEntrySchema<"ebooks/elABCdelEntrenamiento/chapters">;
+  collection: "chapters";
+  data: InferEntrySchema<"chapters">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

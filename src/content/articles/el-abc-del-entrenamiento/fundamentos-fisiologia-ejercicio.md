@@ -1,7 +1,7 @@
 ---
 title: "Fundamentos de Fisiología del Ejercicio 🫀"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 1
 ---
 

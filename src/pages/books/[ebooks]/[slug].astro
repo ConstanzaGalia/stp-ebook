@@ -6,9 +6,12 @@ import DocumentLayout from '../../../layout/DocumentLayout.astro';
 
 const { ebooks, slug } = Astro.params;
 
-const chapters = await getCollection(`ebooks/${ebooks}/chapters`);
-const articles = await getCollection(`ebooks/${ebooks}/articles`);
-const entry = articles.find(a => a.slug === slug);
+const chapters = (await getCollection('chapters')).filter(ch => ch.data.ebook === ebooks);
+const articles = (await getCollection('articles')).filter(ar => ar.data.ebook === ebooks);
+
+const entry = articles.find(
+  a => a.slug === `${ebooks}/${slug}`
+);
 const {Content} = await render(entry);
 ---
 <DocumentLayout  title={ebooks || ''}>

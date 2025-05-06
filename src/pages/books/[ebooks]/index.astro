@@ -6,8 +6,9 @@ import DocumentLayout from '../../../layout/DocumentLayout.astro';
 
 const { ebooks } = Astro.params;
 
-const chapters = await getCollection(`ebooks/${ebooks}/chapters`);
-const articles = await getCollection(`ebooks/${ebooks}/articles`);
+const chapters = (await getCollection('chapters')).filter(ch => ch.data.ebook === ebooks);
+const articles = (await getCollection('articles')).filter(ar => ar.data.ebook === ebooks);
+
 ---
 <DocumentLayout title="Entrenamiento STP Academy">
 <Base >

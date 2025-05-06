@@ -1,7 +1,7 @@
 ---
 title: "🚀 VO₂ Máx"
 chapterSlug: "capitulo-dos"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 5
 ---
 

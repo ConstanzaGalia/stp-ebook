@@ -1,7 +1,7 @@
 ---
 title: "🏋🏽‍♀️ Conceptos de Anatomía general"
 chapterSlug: "capitulo-uno"
-ebook: "elABCdelEntrenamiento"
+ebook: "el-abc-del-entrenamiento"
 order: 1
 ---
 
