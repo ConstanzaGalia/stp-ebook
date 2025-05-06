@@ -1,4 +1,6 @@
 ---
+import { ArrowRightIcon, Bars3Icon } from "@heroicons/react/24/outline";
+
 interface Chapter {
   id: string;
   slug: string;
@@ -35,8 +37,23 @@ const articlesByChapter = sortedChapters.map(ch => {
 
 ---
 
-<div class="flex h-screen">
-  <aside class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white">
+<div class="flex h-screen relative">
+  <!-- Estado toggle invisible -->
+  <input type="checkbox" id="toggleAside" class="peer hidden" />
+
+  <label for="toggleAside"
+  class="fixed top-32 left-4 z-50 bg-primary text-white p-2 rounded md:hidden cursor-pointer peer-checked:hidden">
+  <Bars3Icon width={20}/>
+</label>
+
+
+  <aside class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white
+  hidden peer-checked:block md:block transition-all duration-300 absolute z-40 md:relative">
+  <div class="flex justify-end md:hidden mb-4">
+    <label for="toggleAside" class="cursor-pointer p-2">
+      <Bars3Icon width={20} />
+    </label>
+  </div>
     <h2 class="text-lg font-bold mb-4 capitalize text-white">{ebook || 'Libro'}</h2>
     <ul class="space-y-2 text-white">
       {articlesByChapter.map(chapter => (
@@ -64,7 +81,7 @@ const articlesByChapter = sortedChapters.map(ch => {
     </ul>
   </aside>
 
-  <main class="flex-1 p-6 overflow-y-auto h-screen">
+  <main class="flex-1 p-6 overflow-y-auto h-screen z-10 bg-white">
     <slot />
   </main>
 </div>
