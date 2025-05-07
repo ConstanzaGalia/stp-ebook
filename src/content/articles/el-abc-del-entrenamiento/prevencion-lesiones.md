@@ -1,8 +1,10 @@
-# Prevención de Lesiones
-
-Status: Sin empezar
-
-# PREVENCIÓN DE LESIONES Y READAPTACIÓN FUNCIONAL
+---
+title: "💡 Prevención de lesiones y Readaptación Funcional"
+chapterSlug: "capitulo-siete"
+ebook: "el-abc-del-entrenamiento"
+order: 13
+---
+---
 
 **Basado en McGill, Cook y Gray**
 
