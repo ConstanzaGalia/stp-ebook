@@ -54,7 +54,7 @@ const articlesByChapter = sortedChapters.map(ch => {
       <Bars3Icon width={20} />
     </label>
   </div>
-    <h2 class="text-lg font-bold mb-4 capitalize text-white">{ebook || 'Libro'}</h2>
+    <h2 class="text-lg font-bold mb-4 capitalize text-white">📖 {ebook.replace(/-/g, ' ') || 'Libro'}</h2>
     <ul class="space-y-2 text-white">
       {articlesByChapter.map(chapter => (
         <li id={chapter.slug} class="mb-2 text-white">
