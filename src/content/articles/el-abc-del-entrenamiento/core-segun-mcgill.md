@@ -1,5 +1,5 @@
 ---
-title: "💡 El Core según Stuart McGill"
+title: "🎯 El Core según Stuart McGill"
 chapterSlug: "capitulo-siete"
 ebook: "el-abc-del-entrenamiento"
 order: 9

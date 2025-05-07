@@ -1,5 +1,5 @@
 ---
-title: "💡 Prevención de lesiones y Readaptación Funcional"
+title: "🩼 Prevención de lesiones y Readaptación Funcional"
 chapterSlug: "capitulo-siete"
 ebook: "el-abc-del-entrenamiento"
 order: 13
