@@ -1,24 +1,5 @@
 ---
-import { ArrowRightIcon, Bars3Icon } from "@heroicons/react/24/outline";
-
-interface Chapter {
-  id: string;
-  slug: string;
-  data: {
-    title: string;
-    order: number;
-  };
-}
-
-interface Article {
-  id: string;
-  slug: string;
-  data: {
-    title: string;
-    chapterSlug: string;
-    order: number;
-  };
-}
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const { chapters, articles, ebook } = Astro.props;
 
@@ -50,44 +31,62 @@ const articlesByChapter = sortedChapters.map((ch) => {
   <aside
     id="sidebar"
     class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white
-  hidden peer-checked:block md:block transition-all duration-300 absolute z-40 md:relative"
+    hidden peer-checked:block md:block transition-all duration-300 absolute z-40 md:relative"
+    x-data="{ openSlug: localStorage.getItem('openChapter') || null }"
+    x-init="$watch('openSlug', value => localStorage.setItem('openChapter', value))"
   >
     <div class="flex justify-end md:hidden mb-4">
       <label for="toggleAside" class="cursor-pointer p-2">
         <Bars3Icon width={20} />
       </label>
     </div>
+
     <h2 class="text-lg font-bold mb-4 capitalize text-white">
       📖 {ebook.replace(/-/g, " ") || "Libro"}
     </h2>
-    <ul class="space-y-2 text-white">
-      {
-        articlesByChapter.map((chapter) => (
-          <li id={chapter.slug} class="mb-2 text-white">
-            <div class="font-semibold text-white">
-              <a href={`/books/${ebook}`} class="text-white hover:underline">
-                {chapter.data.title}
-              </a>
-            </div>
-            <ul class="ml-3 mt-1 space-y-2 text-white">
-              {chapter.articles.map((article) => (
-                <li id={article.slug}>
-                  <a
-                    href={`/books/${article.slug}`}
-                    class={`px-1 py-1 rounded block ${
-                      Astro.url.pathname === `/books/${article.slug}`
-                        ? "bg-white text-primary font-bold"
-                        : "text-secondary hover:underline"
-                    }`}
-                  >
-                    {article.data.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))
-      }
+
+    <ul class="space-y-3 text-white">
+      {articlesByChapter.map((chapter) => (
+        <li class="mb-2">
+          <button
+            @click={`openSlug = openSlug === '${chapter.slug}' ? null : '${chapter.slug}'`}
+            class="w-full text-left font-semibold text-white flex items-center justify-between"
+          >
+            <span>{chapter.data.title}</span>
+            <svg
+              x-bind:class={`openSlug === '${chapter.slug}' ? 'rotate-90' : ''`}
+              class="w-6 h-6 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <ul
+            x-show={`openSlug === '${chapter.slug}'`}
+            x-collapse
+            class="ml-3 mt-2 space-y-1 text-white"
+          >
+            {chapter.articles.map((article) => (
+              <li id={article.slug}>
+                <a
+                  href={`/books/${article.slug}`}
+                  class={`px-1 py-1 rounded block ${
+                    Astro.url.pathname === `/books/${article.slug}`
+                      ? "bg-white text-primary font-bold"
+                      : "text-secondary hover:underline"
+                  }`}
+                >
+                  {article.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
     </ul>
   </aside>
 
@@ -95,7 +94,6 @@ const articlesByChapter = sortedChapters.map((ch) => {
     <slot />
   </main>
 </div>
-
 
 <script is:inline>
   const aside = document.querySelector('aside');
