@@ -35,7 +35,7 @@ const ContactSection = () => {
               </h2>
               <a
                 href="mailto:entrenamientostp@gmail.com"
-                className="text-indigo-500 leading-relaxed"
+                className="text-primary font-bold leading-relaxed"
               >
                 entrenamientostp@gmail.com
               </a>
@@ -66,7 +66,7 @@ const ContactSection = () => {
             href="https://www.instagram.com/entrenamientostp.tuc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-primary bg-pink-500 hover:bg-pink-600 py-3 px-5 rounded text-lg transition-all"
+            className="flex items-center text-primary py-3 px-5 rounded text-lg transition-all"
           >
             <img src='igIcono.png' alt='whatsapp' className='h-[40px] mr-2' />
             Instagram

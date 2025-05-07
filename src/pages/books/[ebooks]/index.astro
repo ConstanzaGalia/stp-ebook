@@ -13,9 +13,9 @@ const articles = (await getCollection('articles')).filter(ar => ar.data.ebook ==
 <DocumentLayout title="Entrenamiento STP Academy">
 <Base >
   <BookLayout chapters={chapters} articles={articles} ebook={ebooks}>
-    <div class="prose max-w-none">
+    <div class="prose max-w-none md:max-w-[85%] md:ml-12 p-4 bg-gradient-to-br from-white via-slate-100 to-slate-200 shadow-xl">
       <h1 class="text-3xl font-bold mb-2 capitalize">📖 {ebooks?.replace(/-/g, ' ')}</h1>
-      <hr class="border-4 border-secondary w-[75%] my-3"/>
+      <hr class="border-4 border-secondary my-3"/>
       {chapters
         .sort((a, b) => a.data.order - b.data.order)
         .map(async chapter => {

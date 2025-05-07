@@ -18,7 +18,7 @@ const {Content} = await render(entry);
   <Base>
     <BookLayout chapters={chapters} articles={articles} ebook={ebooks}>
       {entry && Content ? (
-        <article class="prose prose-neutral lg:prose-md max-w-[85%] ml-12 ml-0-md p-8 max-w-[100%]-md bg-gradient-to-br from-white via-slate-100 to-slate-200 shadow-xl">
+        <article class="prose prose-neutral lg:prose-md w-full ml-12 ml-0-md p-8 md:max-w-[85%] bg-gradient-to-br from-white via-slate-100 to-slate-200 shadow-xl">
           <h1>{entry.data.title}</h1>
           <Content />
         </article>

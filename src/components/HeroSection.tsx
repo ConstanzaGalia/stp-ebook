@@ -24,7 +24,7 @@ const HeroSection = () => {
           <h1 className="title-font sm:text-4xl text-3xl mb-8 font-bold text-gray-900">
             Formamos Entrenadores con herramientas reales
           </h1>
-          <p className="mb-6 leading-relaxed font-bold">
+          <p className="mb-6 font-bold">
             Una academia online especializada 100% en entrenamiento. Formación completa, actualizada y a tu ritmo.
           </p>
 

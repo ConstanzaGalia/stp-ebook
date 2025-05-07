@@ -5,10 +5,6 @@ ebook: "el-abc-del-entrenamiento"
 order: 1
 ---
 
-# Anatomía General del Movimiento Humano
-
----
-
 ## 🎯 Objetivo del capítulo
 
 Comprender la organización del cuerpo humano desde una perspectiva funcional, identificando los sistemas y estructuras anatómicas clave involucradas en el movimiento, y aplicando estos conocimientos a la práctica del entrenamiento físico.

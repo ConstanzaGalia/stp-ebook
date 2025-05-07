@@ -24,9 +24,9 @@ const { chapters, articles, ebook } = Astro.props;
 
 const sortedChapters = chapters.sort((a, b) => a.data.order - b.data.order);
 
-const articlesByChapter = sortedChapters.map(ch => {
+const articlesByChapter = sortedChapters.map((ch) => {
   const relatedArticles = articles
-    .filter(a => a.data.chapterSlug === ch.slug)
+    .filter((a) => a.data.chapterSlug === ch.slug)
     .sort((a, b) => a.data.order - b.data.order);
 
   return {
@@ -34,50 +34,60 @@ const articlesByChapter = sortedChapters.map(ch => {
     articles: relatedArticles,
   };
 });
-
 ---
 
 <div class="flex h-screen relative">
   <!-- Estado toggle invisible -->
   <input type="checkbox" id="toggleAside" class="peer hidden" />
 
-  <label for="toggleAside"
-  class="fixed top-32 left-4 z-50 bg-primary text-white p-2 rounded md:hidden cursor-pointer peer-checked:hidden">
-  <Bars3Icon width={20}/>
-</label>
+  <label
+    for="toggleAside"
+    class="fixed top-32 left-4 z-50 bg-primary text-white p-2 rounded md:hidden cursor-pointer peer-checked:hidden"
+  >
+    <Bars3Icon width={20} />
+  </label>
 
-
-  <aside class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white
-  hidden peer-checked:block md:block transition-all duration-300 absolute z-40 md:relative">
-  <div class="flex justify-end md:hidden mb-4">
-    <label for="toggleAside" class="cursor-pointer p-2">
-      <Bars3Icon width={20} />
-    </label>
-  </div>
-    <h2 class="text-lg font-bold mb-4 capitalize text-white">📖 {ebook.replace(/-/g, ' ') || 'Libro'}</h2>
+  <aside
+    id="sidebar"
+    class="w-64 bg-primary h-screen p-4 overflow-y-auto flex-shrink-0 shadow-xl text-white
+  hidden peer-checked:block md:block transition-all duration-300 absolute z-40 md:relative"
+  >
+    <div class="flex justify-end md:hidden mb-4">
+      <label for="toggleAside" class="cursor-pointer p-2">
+        <Bars3Icon width={20} />
+      </label>
+    </div>
+    <h2 class="text-lg font-bold mb-4 capitalize text-white">
+      📖 {ebook.replace(/-/g, " ") || "Libro"}
+    </h2>
     <ul class="space-y-2 text-white">
-      {articlesByChapter.map(chapter => (
-        <li id={chapter.slug} class="mb-2 text-white">
-          <div class="font-semibold text-white"><a
-                  href={`/books/${ebook}`}
-                  class="text-white hover:underline"
-                >
-                  {chapter.data.title}
-                </a></div>
-          <ul class="ml-3 mt-1 space-y-2 text-white">
-            {chapter.articles.map(article => (
-              <li id={article.slug}>
-                <a
-                  href={`/books/${article.slug}`}
-                  class="text-secondary hover:underline"
-                >
-                  {article.data.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
+      {
+        articlesByChapter.map((chapter) => (
+          <li id={chapter.slug} class="mb-2 text-white">
+            <div class="font-semibold text-white">
+              <a href={`/books/${ebook}`} class="text-white hover:underline">
+                {chapter.data.title}
+              </a>
+            </div>
+            <ul class="ml-3 mt-1 space-y-2 text-white">
+              {chapter.articles.map((article) => (
+                <li id={article.slug}>
+                  <a
+                    href={`/books/${article.slug}`}
+                    class={`px-1 py-1 rounded block ${
+                      Astro.url.pathname === `/books/${article.slug}`
+                        ? "bg-white text-primary font-bold"
+                        : "text-secondary hover:underline"
+                    }`}
+                  >
+                    {article.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
     </ul>
   </aside>
 
@@ -85,3 +95,19 @@ const articlesByChapter = sortedChapters.map(ch => {
     <slot />
   </main>
 </div>
+
+
+<script is:inline>
+  const aside = document.querySelector('aside');
+  const key = 'sidebar-scroll';
+
+  if (aside && localStorage.getItem(key)) {
+    aside.scrollTop = parseInt(localStorage.getItem(key), 10);
+  }
+
+  window.addEventListener('beforeunload', () => {
+    if (aside) {
+      localStorage.setItem(key, aside.scrollTop);
+    }
+  });
+</script>
