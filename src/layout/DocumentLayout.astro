@@ -1,4 +1,5 @@
 ---
+import { Analytics } from '@vercel/analytics/next';
 interface Props {
   title: string;
   description?: string;
@@ -29,5 +30,6 @@ const canonicalURL = new URL(Astro.url).href;
   </head>
   <body class="flex flex-col h-full w-full text-primary scroll-smooth">
     <slot />
+    <Analytics />
   </body>
 </html>
