@@ -21,7 +21,16 @@ const ebooks = [
     title: "Ebook-EntrenamientoSTP",
     image: "/ebookImage.png",
     description: "Una guía para entrenar con sentido",
-    type: 'EBOOK_FUNCTIONALTRAINER'
+    type: 'EBOOK_FUNCTIONALTRAINER',
+    rotate: true,
+  },
+  {
+    slug: "los-basicos",
+    title: "Manual Los Básicos",
+    image: "/portadaLosBasicos.png",
+    description: "Sobre los que se construyen el rendimiento, la fuerza y la longevidad",
+    type: 'THE_BASICS_MANUAL',
+    rotate: false,
   },
 ];
 
@@ -60,7 +69,7 @@ const filteredEbooks = ebooks.filter(ebook =>
                 {filteredEbooks.map(ebook => (
                   <div class="border rounded-xl p-6 shadow hover:shadow-lg transition duration-200 flex flex-col justify-between max-w-[350px]">
                     <div>
-                      <img class="h-64 -rotate-[0.5rad]" src={ebook.image} alt="Portada del Ebook" />
+                      <img class={`h-64 ${ebook.rotate ? '-rotate-[0.5rad]' : 'mb-3'}`} src={ebook.image} alt="Portada del Ebook" />
                       <h2 class="text-xl font-semibold mb-2">{ebook.title}</h2>
                       <p class="text-gray-600 mb-4">{ebook.description}</p>
                     </div>
