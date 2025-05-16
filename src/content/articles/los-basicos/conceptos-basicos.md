@@ -16,6 +16,8 @@ Los básicos son el conjunto de 3 ejercicios con los cuales podemos desplazar gr
 
 Existe una disciplina entera que se enfoca en el entrenamiento de estos 3 ejercicios que se denomina **powerlifting**.
 
+![Los 3 ejercicios](/los3ejercicios.png)
+
 ---
 
 ## 🧠 Conceptos a tener en cuenta
@@ -37,6 +39,8 @@ Pero en un análisis más profundo podemos ver que:
 
 Es un abordaje de articulación por articulación. Hay segmentos preparados para producir mucho movimiento, mientras que otros están preparados para generar estabilidad.  
 Los continuos de movilidad-estabilidad se dan de manera alternada en las articulaciones. Necesitamos de zonas que provean de movimientos, mientras que de otras que lo estabilicen.
+
+<img src="/estabilidad-movilidad.png" alt="alt text" width="500" />
 
 **Las articulaciones deberían comportarse de la siguiente manera:**
 
@@ -71,18 +75,27 @@ Este continuo puede utilizarse como **herramienta de evaluación rápida** para 
 - **Sentadilla**: movilidad en tobillos, cadera y hombros. Estabilidad en pie, rodilla y zona lumbar.  
 - **Banco plano**: movilidad en hombros. Estabilidad en escápulas y codos.  
 
+<img src="/est-mov-ejercicio.png" alt="El continuo aplicado a los básicos" />
+
 ---
 
 ## 🎯 Línea de descarga
 
 La carga sube y baja sobre una línea vertical, y siempre queda encima de un punto medio entre nuestro apoyo.
 
+<div class="flex space-x-4"> 
+
 - **Peso muerto**: la carga comienza por encima de la mitad de nuestro pie, y el peso se mantiene por encima de esta estructura en todo su recorrido. La carga sigue una trayectoria que se alinea con la línea de la gravedad.
+
+<img src="/lineaDescargaPesoMuerto.png" alt="Línea de descarga en el peso muerto" width="300"/>
+</div>
 
 
 - **Sentadilla**: la carga cae por encima de la mitad de nuestro pie en todas las versiones de la sentadilla.
+<img src="/lineaDescargaSentadilla.png" alt="Línea de descarga en la sentadilla" width="300"/>
 
-- **Press banca**: el recorrido de la carga no es estrictamente vertical, sino que también posee un ligero componente de desplazamiento horizontal (en dirección hacia la cabeza), que hace que la carga quede finalmente por encima de nuestros hombros.   
+- **Press banca**: el recorrido de la carga no es estrictamente vertical, sino que también posee un ligero componente de desplazamiento horizontal (en dirección hacia la cabeza), que hace que la carga quede finalmente por encima de nuestros hombros.
+<img src="/lineaDescargaPressBanca.png" alt="Línea de descarga en el press de banca" width="300"/>   
 
 ---
 
@@ -90,6 +103,8 @@ La carga sube y baja sobre una línea vertical, y siempre queda encima de un pun
 
 - **Brazo de palanca**: línea más corta entre el punto de apoyo y la aplicación de fuerza.  
 - **Brazo de momento**: distancia horizontal desde el punto de apoyo hasta la línea donde se aplica la fuerza.  
+
+<img src="/brazoPalancaMomento.png" alt="Brazo de palanca, de momento" width="400"/>  
 
 
 📏 Cuanto más cercano a cero sea el brazo de momento, más equilibrio va a haber y menos torque sobre el punto de apoyo. A medida que aumenta esta distancia horizontal, aumentará el brazo de momento, y en consecuencia, habrá un mayor incremento en el torque.
@@ -109,14 +124,24 @@ Para calcular el torque, se simplifica utilizando el **brazo de momento**, que n
 📉 Si acortás esta distancia horizontal, la carga "pesará menos".  
 📐 Menor brazo de momento = menos torque.
 
+<img src="/torque.png" alt="Brazo de palanca, de momento" width="400"/>  
+
+
 ---
+<div class="flex">
+<div class="mt-5 pr-2">
 
 ### 🔍 Fuerzas internas vs. externas
-
 Por otra parte, podemos diferenciar entre brazo de momento de las fuerzas externas y brazo de momento de las fuerzas internas. 
 
 - **Brazo de momento de las fuerzas externas**: distancia entre la carga/gravedad y la articulación.  
 - **Brazo de momento de las fuerzas internas**: distancia entre el músculo y su inserción articular.  
+</div>
+
+<img src="/brazoMomento.png" alt="Brazo de momento" width="400" class="border-4 border-secondary"/>  
+
+</div>
+
 
 ---
 
