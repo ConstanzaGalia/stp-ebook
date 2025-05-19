@@ -84,6 +84,8 @@ Podemos definir a los empujes como aquellos en los que **alejamos las extremidad
 - Reafirma el **arco lumbar**.
 - **Integra miembros inferiores al tronco**, formando un puente de tensión y estabilidad.
 
+<img src="/bancoConArco.png" atl="Press plano con arco" class="w-[75%]"/>
+
 ---
 
 ## 📈 Inclinación / Declinación:
