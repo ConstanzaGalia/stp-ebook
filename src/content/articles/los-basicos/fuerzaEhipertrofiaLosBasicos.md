@@ -7,7 +7,7 @@ order: 3
 
 En este apartado, profundizamos en los principios fisiológicos y metodológicos detrás del desarrollo de **fuerza** y **hipertrofia** usando los tres ejercicios básicos: **sentadilla, press de banca y peso muerto**. Se incluye teoría aplicada, enfoques combinados, ejemplos prácticos y bibliografía sólida.
 
-> “La fuerza es la madre de todas las cualidades físicas.”
+> La fuerza es la madre de todas las cualidades físicas.
 > 
 > 
 > — *Mark Rippetoe*

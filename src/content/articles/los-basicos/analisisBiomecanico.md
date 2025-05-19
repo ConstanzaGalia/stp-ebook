@@ -6,7 +6,7 @@ order: 4
 ---
 
 
-> “La biomecánica no reemplaza la técnica, la explica.”
+> La biomecánica no reemplaza la técnica, la explica.
 > 
 > 
 > — *Dr. Stuart McGill*

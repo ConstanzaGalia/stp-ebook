@@ -7,7 +7,7 @@ order: 6
 
 **¿Qué tan fuerte hay que ser para rendir mejor en tu deporte?**
 
-> “La fuerza no es específica del deporte, pero el deportista fuerte hace todo mejor.”
+> La fuerza no es específica del deporte, pero el deportista fuerte hace todo mejor.
 > 
 > 
 > — *Bret Contreras*

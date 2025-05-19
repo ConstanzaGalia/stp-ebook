@@ -7,7 +7,7 @@ order: 1
 
 **Sentadilla – Press de banca – Peso muerto**
 
-> “Entrenar fuerte es importante. Entrenar bien es indispensable.”
+> Entrenar fuerte es importante. Entrenar bien es indispensable.
 > 
 > 
 > — *Stuart McGill*
