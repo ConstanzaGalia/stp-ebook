@@ -15,13 +15,13 @@ Analizamos los patrones de movimiento, el enfoque de movilidad y estabilidad art
 
 También se detallan conceptos clave como:
 
-Línea de descarga: trayectoria vertical ideal de la carga.
+- Línea de descarga: trayectoria vertical ideal de la carga.
 
-Brazo de momento y torque: cómo la distancia entre la carga y la articulación afecta el esfuerzo.
+- Brazo de momento y torque: cómo la distancia entre la carga y la articulación afecta el esfuerzo.
 
-Fuerzas internas vs. externas: diferencia entre palancas musculares y palancas de la carga.
+- Fuerzas internas vs. externas: diferencia entre palancas musculares y palancas de la carga.
 
-🛡️ SPOTTER: el rol crítico de seguridad en el entrenamiento con cargas pesadas.
+- SPOTTER: el rol crítico de seguridad en el entrenamiento con cargas pesadas.
 
 ---
 
