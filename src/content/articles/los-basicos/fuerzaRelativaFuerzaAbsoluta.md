@@ -5,7 +5,7 @@ ebook: "los-basicos"
 order: 5
 ---
 
-> “La fuerza sin control puede ser una amenaza. La fuerza adaptada al contexto es una ventaja.”
+> La fuerza sin control puede ser una amenaza. La fuerza adaptada al contexto es una ventaja.
 > 
 > 
 > — *Greg Nuckols*
