@@ -1,6 +1,6 @@
 ---
 title: "📘 Conceptos básicos"
-chapterSlug: "capitulo-uno"
+chapterSlug: "capitulo-uno-basicos"
 ebook: "los-basicos"
 order: 1
 ---

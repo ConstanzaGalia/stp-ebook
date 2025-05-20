@@ -1,6 +1,6 @@
 ---
 title: "✅ Técnicas y Prevención de Ejecuciones Lesivas"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 1
 ---

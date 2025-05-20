@@ -1,6 +1,6 @@
 ---
 title: "🤝 Parámetros de Fuerza y Transferencia a Otros Deporte"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 6
 ---

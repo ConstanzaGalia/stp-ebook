@@ -1,7 +1,7 @@
 ---
 title: "Capítulo 2: 💪🏽 Los 3 ejercicios"
 ebook: "los-basicos"
-slug: "capitulo-dos"
+slug: "capitulo-dos-basicos"
 order: 2
 ---
 

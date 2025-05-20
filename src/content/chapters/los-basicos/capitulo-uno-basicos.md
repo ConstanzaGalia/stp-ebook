@@ -1,7 +1,7 @@
 ---
 title: "Capítulo 1: 🧍‍♂️ Aspectos Generales"
 ebook: "los-basicos"
-slug: "capitulo-uno"
+slug: "capitulo-uno-basicos"
 order: 1
 ---
 

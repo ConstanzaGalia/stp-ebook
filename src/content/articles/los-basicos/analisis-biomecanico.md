@@ -1,6 +1,6 @@
 ---
 title: "🔎 Análisis Biomecánico desde el Powerlifting"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 4
 ---

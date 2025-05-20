@@ -1,6 +1,6 @@
 ---
 title: "🏋🏽‍♀️ Press de Banca"
-chapterSlug: "capitulo-dos"
+chapterSlug: "capitulo-dos-basicos"
 ebook: "los-basicos"
 order: 3
 ---

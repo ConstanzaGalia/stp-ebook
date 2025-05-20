@@ -1,6 +1,6 @@
 ---
 title: "🔄 Progresiones, regresiones y variantes"
-chapterSlug: "capitulo-dos"
+chapterSlug: "capitulo-dos-basicos"
 ebook: "los-basicos"
 order: 7
 ---

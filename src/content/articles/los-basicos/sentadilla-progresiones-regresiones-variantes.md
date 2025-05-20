@@ -1,6 +1,6 @@
 ---
 title: "💪🏽 Progresiones, Regresiones y Variantes"
-chapterSlug: "capitulo-dos"
+chapterSlug: "capitulo-dos-basicos"
 ebook: "los-basicos"
 order: 2
 ---

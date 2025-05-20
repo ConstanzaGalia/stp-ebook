@@ -1,6 +1,6 @@
 ---
 title: "🎯 Fuerza e Hipertrofia"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 3
 ---

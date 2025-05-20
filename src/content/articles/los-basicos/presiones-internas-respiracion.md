@@ -1,6 +1,6 @@
 ---
 title: "💨 Presiones internas y respiración"
-chapterSlug: "capitulo-dos"
+chapterSlug: "capitulo-dos-basicos"
 ebook: "los-basicos"
 order: 6
 ---

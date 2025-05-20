@@ -1,7 +1,7 @@
 ---
 title: "Capítulo 3: 🤝 Los básicos en acción"
 ebook: "los-basicos"
-slug: "capitulo-tres"
+slug: "capitulo-tres-basicos"
 order: 3
 ---
 

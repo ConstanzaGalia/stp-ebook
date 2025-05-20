@@ -1,6 +1,6 @@
 ---
 title: "💪🏽 Fuerza Relativa, Fuerza Absoluta y Categorías de Competencia"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 5
 ---

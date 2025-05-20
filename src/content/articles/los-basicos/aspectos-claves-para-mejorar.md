@@ -1,6 +1,6 @@
 ---
 title: "🧠 Aspectos Claves para Mejorar el Rendimiento"
-chapterSlug: "capitulo-tres"
+chapterSlug: "capitulo-tres-basicos"
 ebook: "los-basicos"
 order: 2
 ---
