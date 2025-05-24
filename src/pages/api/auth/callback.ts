@@ -36,6 +36,8 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
   }
 
   const userId = userData.user.id;
+  const userEmail = userData.user.email;
+  const userName = userData.user.user_metadata.name || null;
 
   // ✅ Verificar si ya existe el profile
   const { data: existingProfile } = await supabase
@@ -48,7 +50,9 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     // ✅ Crear el perfil del usuario
     await supabase.from("profiles").insert({
       id: userId,
-      role: "student", // o lo que desees
+      role: "student",
+      email: userEmail,
+      name: userName,
     });
   }
 
