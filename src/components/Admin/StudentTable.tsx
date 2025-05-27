@@ -114,19 +114,13 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
         <thead className="bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Name
+              Nombre y Apellido
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Email
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Courses
-            </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              E-Books
-            </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Actions
+              Accesos
             </th>
           </tr>
         </thead>
@@ -156,7 +150,7 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
                   onClick={() => openModal(student)}
                   className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-accent-700 bg-accent-100 hover:bg-accent-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500"
                 >
-                  Manage Access
+                  Ver
                 </button>
               </td>
             </tr>

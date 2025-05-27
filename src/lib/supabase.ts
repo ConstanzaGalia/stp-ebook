@@ -12,3 +12,9 @@ export const supabase = createClient(
     },
   },
 );
+
+// Cliente admin para modificar app_metadata
+export const supabaseAdmin = createClient(
+  import.meta.env.SUPABASE_URL,
+  import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+);

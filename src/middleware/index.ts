@@ -11,7 +11,7 @@ export const onRequest = defineMiddleware(
     const accessToken = cookies.get("sb-access-token");
     const refreshToken = cookies.get("sb-refresh-token");
 
-    // Siempre intenta setear el usuario si hay tokens
+    // Intenta setear sesión si hay tokens
     if (accessToken && refreshToken) {
       const { data, error } = await supabase.auth.setSession({
         access_token: accessToken.value,
@@ -35,21 +35,28 @@ export const onRequest = defineMiddleware(
       }
     }
 
-    // Rutas protegidas: redirige si no hay user
+    // 🔐 Bloqueo de ruta /admin si no es admin
+    const isAdminRoute = url.pathname.startsWith("/admin");
+    const userRole = locals.user?.app_metadata?.role;
+    if (isAdminRoute && userRole !== "admin") {
+      return redirect("/dashboard");
+    }
+
+    // Rutas protegidas generales
     if (micromatch.isMatch(url.pathname, protectedRoutes)) {
       if (!accessToken || !refreshToken || !locals.user) {
         return redirect("/signin");
       }
     }
 
-    // Si intenta entrar a /signin o /register y ya está logueado, redirigir
+    // Redirige si intenta ir a /signin o /register ya logueado
     if (micromatch.isMatch(url.pathname, redirectRoutes)) {
       if (accessToken && refreshToken && locals.user) {
         return redirect("/dashboard");
       }
     }
 
-    // API protegida
+    // Protege rutas de API
     if (micromatch.isMatch(url.pathname, protectedAPIRoutes)) {
       if (!accessToken || !refreshToken) {
         return new Response(JSON.stringify({ error: "Unauthorized" }), {

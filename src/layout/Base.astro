@@ -18,6 +18,13 @@ const { user } = Astro.locals;
         <li>
           <a href="/dashboard" class="block text-secondary font-bold">Academy</a>
         </li>
+        {
+          user?.app_metadata.role === 'admin' && (
+          <li>
+          <a href="/admin" class="block text-secondary font-bold">Admin</a>
+          </li>
+          )
+        }
         {user && (
           <li class="flex justify-between space-x-2">
             <UserIcon height={20} />
