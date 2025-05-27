@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { supabase } from "../../../lib/supabase";
+import { supabase, supabaseAdmin } from "../../../lib/supabase";
 
 export const GET: APIRoute = async ({ url, cookies, redirect }) => {
   const authCode = url.searchParams.get("code");
@@ -28,28 +28,44 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     httpOnly: true,
   });
 
-  // ✅ Obtener usuario logueado
+  // Obtener usuario logueado
   const { data: userData, error: userError } = await supabase.auth.getUser();
+  const user = userData?.user;
 
-  if (userError || !userData.user) {
+  if (userError || !user) {
     return new Response("No user found after login", { status: 500 });
   }
 
-  const userId = userData.user.id;
+  const userId = user.id;
+  const userEmail = user.email;
+  const userName = user.user_metadata.name || null;
 
-  // ✅ Verificar si ya existe el profile
-  const { data: existingProfile } = await supabase
+  // Consultar perfil desde la tabla profiles
+  const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("id")
+    .select("role")
     .eq("id", userId)
     .maybeSingle();
 
-  if (!existingProfile) {
-    // ✅ Crear el perfil del usuario
+  let role = profile?.role || "student";
+
+  if (!profile) {
+    // Crear perfil si no existe
     await supabase.from("profiles").insert({
       id: userId,
-      role: "student", // o lo que desees
+      role,
+      email: userEmail,
+      name: userName,
     });
+  }
+
+  // Actualizar el app_metadata del usuario con el rol
+  const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
+    app_metadata: { role },
+  });
+
+  if (updateError) {
+    console.error("Error updating app_metadata.role:", updateError.message);
   }
 
   return redirect("/dashboard");
