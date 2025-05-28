@@ -135,16 +135,6 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-500">{student.email}</div>
               </td>
-              {/* <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
-                  {student.course_access?.length || 0} courses
-                </div>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
-                  {student.ebook_access?.length || 0} e-books
-                </div>
-              </td> */}
               <td className="px-6 py-4 whitespace-nowrap text-sm">
                 <button 
                   onClick={() => openModal(student)}
@@ -179,7 +169,7 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
               </div>
 
               <h3 className="text-lg font-medium leading-6 text-gray-900">
-                Manage Access for {selectedStudent.name}
+                Configuración de accesos para: <span className='font-bold text-secondary'>{selectedStudent.name}</span>
               </h3>
               <p className="mt-1 text-sm text-gray-500">
                 {selectedStudent.email}
@@ -191,55 +181,31 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
                 </div>
               )}
 
-              {/* <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-medium text-gray-900">Courses</h4>
+                  <h4 className="text-sm font-medium text-gray-900">Accesos</h4>
                   <div className="mt-2 space-y-2 max-h-60 overflow-y-auto">
-                    {courses.length > 0 ? (
-                      courses.map((course) => (
-                        <div key={course.id} className="flex items-center">
+                    {selectedStudent.content_access && selectedStudent.content_access.length > 0 ? (
+                      selectedStudent.content_access.map((c) => (
+                        <div key={c.content.id} className="flex items-center">
                           <input
-                            id={`course-${course.id}`}
+                            id={`course-${c.content.id}`}
                             type="checkbox"
                             className="w-4 h-4 text-accent-600 border-gray-300 rounded focus:ring-accent-500"
-                            checked={selectedCourses.includes(course.id)}
-                            onChange={() => toggleCourse(course.id)}
+                            checked={selectedCourses.includes(c.content.id)}
+                            onChange={() => toggleCourse(c.content.id)}
                           />
-                          <label htmlFor={`course-${course.id}`} className="ml-2 text-sm text-gray-700">
-                            {course.title}
+                          <label htmlFor={`course-${c.content.id}`} className="ml-2 text-sm text-gray-700">
+                            {c.content.title}
                           </label>
                         </div>
                       ))
                     ) : (
-                      <p className="text-sm text-gray-500">No courses available</p>
+                      <p className="text-sm text-gray-500">Sin accesos</p>
                     )}
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="text-sm font-medium text-gray-900">E-Books</h4>
-                  <div className="mt-2 space-y-2 max-h-60 overflow-y-auto">
-                    {ebooks.length > 0 ? (
-                      ebooks.map((ebook) => (
-                        <div key={ebook.id} className="flex items-center">
-                          <input
-                            id={`ebook-${ebook.id}`}
-                            type="checkbox"
-                            className="w-4 h-4 text-accent-600 border-gray-300 rounded focus:ring-accent-500"
-                            checked={selectedEbooks.includes(ebook.id)}
-                            onChange={() => toggleEbook(ebook.id)}
-                          />
-                          <label htmlFor={`ebook-${ebook.id}`} className="ml-2 text-sm text-gray-700">
-                            {ebook.title}
-                          </label>
-                        </div>
-                      ))
-                    ) : (
-                      <p className="text-sm text-gray-500">No e-books available</p>
-                    )}
-                  </div>
-                </div>
-              </div> */}
+              </div>
 
               <div className="flex justify-end mt-6 space-x-3">
                 <button
@@ -247,15 +213,15 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, onAccessUpdate })
                   className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500"
                   onClick={closeModal}
                 >
-                  Cancel
+                  Cancelar
                 </button>
                 <button
                   type="button"
                   disabled={updating}
-                  className="px-4 py-2 text-sm font-medium text-white bg-accent-600 border border-transparent rounded-md shadow-sm hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 disabled:opacity-50"
+                  className="px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md shadow-sm hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 disabled:opacity-50"
                   // onClick={handleSaveAccess}
                 >
-                  {updating ? 'Saving...' : 'Save Changes'}
+                  {updating ? 'Guardando' : 'Guardar Cambios'}
                 </button>
               </div>
             </div>
