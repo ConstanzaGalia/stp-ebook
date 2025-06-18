@@ -3,6 +3,7 @@ import { ArrowDownRightIcon, ArrowRightIcon, ExclamationTriangleIcon } from "@he
 import Base from "../layout/Base.astro";
 import DocumentLayout from "../layout/DocumentLayout.astro";
 import { supabase } from "../lib/supabase";
+import PdfViewer from "../components/Academy/PdfViewer";
 
 const { user } = Astro.locals;
 
@@ -44,7 +45,7 @@ const filteredEbooks = ebooks.filter(ebook =>
 ---
 <DocumentLayout title="Entrenamiento STP | Dashboard">
   <Base >
-    <section class="h-full" style="background-image: url('/signinImg.png');">
+    <section class="w-full min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('/signinImg.png');">
       <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
         <h1 class="text-3xl font-bold mb-6">Biblioteca STP</h1>
         {
@@ -84,6 +85,15 @@ const filteredEbooks = ebooks.filter(ebook =>
                 ))}
               </div>
             </>
+          )
+        }
+        {
+          userContentTypes.includes('EBOOK_FUNCTIONALTRAINER') && (
+            <div class="mt-8">
+            <hr class="border-2 border-primary w-[60%]" />
+            <h1 class="text-3xl font-bold my-6">Recursos de Apoyo</h1>
+            <PdfViewer url={"/SistemaEntrenamientoSTP.pdf"} client:load />
+            </div>
           )
         }
       </div>
