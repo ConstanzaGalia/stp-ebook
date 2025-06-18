@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 type PdfViewerProps = {
   url: string;
 };
 
 const PdfViewer = ({ url }: PdfViewerProps) => {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
-        <div className="relative w-48 h-64 border rounded overflow-hidden group cursor-pointer" onClick={() => setShowModal(true)}>
-            <iframe
-              src={url}
-              className="w-full h-full pointer-events-none"
-            />
-          </div>
+      <div
+        className="relative w-48 h-64 border rounded overflow-hidden group cursor-pointer border-2 border-gray rounded-lg p-1 shadow hover:shadow-lg transition duration-200"
+        onClick={() => setShowModal(true)}
+      >
+        <iframe src={url} className="w-full h-full pointer-events-none" />
+      </div>
 
-          {showModal && (
+      {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-4 rounded-lg w-[90%] h-[90%] relative">
             <button
@@ -25,16 +25,12 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
             >
               ✕
             </button>
-            <iframe
-              src={url}
-              className="w-full h-full"
-            ></iframe>
+            <iframe src={url} className="w-full h-full"></iframe>
           </div>
         </div>
       )}
-
     </div>
-  )
-}
+  );
+};
 
-export default PdfViewer
+export default PdfViewer;
