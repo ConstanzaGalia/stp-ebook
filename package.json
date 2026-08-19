@@ -16,7 +16,7 @@
     "@astrojs/solid-js": "^5.0.10",
     "@astrojs/starlight": "^0.34.3",
     "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vercel": "^8.1.4",
+    "@astrojs/vercel": "^8.2.11",
     "@heroicons/react": "^2.2.0",
     "@supabase/supabase-js": "^2.39.1",
     "@tailwindcss/typography": "^0.5.16",
@@ -37,6 +37,6 @@
     "prettier-plugin-astro": "^0.12.2"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x || 24.x"
   }
 }
